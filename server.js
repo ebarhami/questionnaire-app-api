@@ -12,6 +12,9 @@ require('./models');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+var cors = require('cors');
+app.use(cors());
+
 app.use(routes);
 
 // Bootstrap server

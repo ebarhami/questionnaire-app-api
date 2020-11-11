@@ -9,12 +9,11 @@ const questionnaireSchema = new Schema({
     },
     questions: [
         {
-            no: Number,
             question: String,
-            answerOption: [{
-                option: String
+            answer_option: [{
+                type: String
             }],
-            correctIdx: {
+            correct_idx: {
                 type: Number,
                 required: true
             }

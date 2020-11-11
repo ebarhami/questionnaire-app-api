@@ -2,18 +2,24 @@ const Questionnaire = require('../models/questionnaire');
 
 module.exports = {
     findAll: function (req, res) {
-        User.find(req.query)
-            .then(users => res.json(users))
+        Questionnaire.find(req.query)
+            .then(questionnaires => res.json(questionnaires))
             .catch(err => res.status(400).json(err));
     },
     findById: function (req, res) {
-        User.findById(req.params.id)
-            .then(user => res.json(user))
+        Questionnaire.findById(req.params.id)
+            .then(questionnaire => res.json(questionnaire))
             .catch(err => res.status(400).json(err));
     },
     create: function (req, res) {
-        User.create(req.body)
-            .then(newUser => res.json(newUser))
+        Questionnaire.create(req.body)
+            .then(newQuestionnaire => res.json(newQuestionnaire))
             .catch(err => res.status(400).json(err));
     },
+    remove: function (req, res) {
+        Questionnaire.findById({ _id: req.params.id })
+            .then(questionnaire => questionnaire.remove())
+            .then(questionnaires => res.json(questionnaires))
+            .catch(err => res.status(400).json(err));
+    }
 };
