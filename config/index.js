@@ -1,6 +1,3 @@
-const dbuser = 'questionnaire';
-const dbpassword = 'af863df0-8378-4e94-a522-df8abdc11c5e';
-
-const MONGODB_URI = `mongodb://localhost:27017/questionnaire`;
+const MONGODB_URI = `mongodb+srv://questionnaire:3BwAvUjKHml262WP@cluster0.o8gd8.mongodb.net/questionnaire?retryWrites=true&w=majority`;
 
 module.exports = MONGODB_URI;
